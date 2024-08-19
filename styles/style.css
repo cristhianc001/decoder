@@ -11,7 +11,13 @@
 }
 
 .header__imagen {
-    width: 10%;
+    width: 5%;
+}
+
+
+.input {
+    width: 30rem;    
+    height: 20rem;   
 }
 
 .footer{
