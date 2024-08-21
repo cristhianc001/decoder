@@ -7,22 +7,41 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
+    
     <header class="header">
         <img class="header__imagen" src="./assets/decode.png">
+        <img class="header__imagen" src="./assets/alura.svg">
     </header>
-
-    <main>
+    <div class="informacion">   
         <h1> Prueba </h1>
-        <textarea type="text" class="input" placeholder="Escriba el texto aqui"></textarea>
-        <div>
-            <p>● Solo letras minúsculas y sin acentos</p>
-        </div>
+        <p> Parrafo </p>
+    </div>
 
+    <main class="contenido">
+        
+        <section class="contenido__principal">
 
-        <div> 
-            <button>Encriptar</button> 
-            <button>Desencriptar</button>
-        </div>
+            <div> 
+            
+                <textarea type="text" class="input" placeholder="Escriba el texto aqui"></textarea>
+                <p>● Solo letras minúsculas y sin acentos</p>
+                <button>Encriptar</button> 
+                <button>Desencriptar</button>
+            </div>
+
+            <div> 
+                <div class="message-container">
+                    <img src="image-placeholder.png" alt="Ilustración" class="message-image">
+                    <p class="message-title">Ningún mensaje fue encontrado</p>
+                    <p class="message-text">Ingresa el texto que desees encriptar o desencriptar.</p>
+                </div>
+
+                <div>
+                    <button>Copiar</button>
+                </div>
+            </div>
+
+        </section>
         
     </main>
 
