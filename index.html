@@ -23,18 +23,18 @@
 
             <div> 
             
-                <textarea type="text" class="input" placeholder="Escriba el texto aqui"></textarea>
-                <p class="condicion">● Solo letras minúsculas y sin acentos</p>
-                <button>Encriptar</button> 
+                <textarea type="text" class="contenido__principal__input" id="textoUsuario" placeholder="Escriba el texto aqui"></textarea>
+                <p class="contenido__principal__condicion">● Solo letras minúsculas y sin acentos</p>
+                <button onclick="encriptar();">Encriptar</button> 
                 <button>Desencriptar</button>
                 
             </div>
 
             <div> 
-                <div class="message-container">
-                    <img src="image-placeholder.png" alt="no-hay-texto" class="message-image">
-                    <p class="message-title">Ningún mensaje fue encontrado</p>
-                    <p class="message-text">Ingresa el texto que desees encriptar o desencriptar.</p>
+                <div class="contenido__principal__resultado">
+                    <img alt="no-hay-texto"  class="contenido__principal__resultado__imagen">
+                    <p class="contenido__principal__resultado__titulo">Ningún mensaje fue encontrado</p>
+                    <p class="contenido__principal__resultado__info">Ingresa el texto que desees encriptar o desencriptar.</p>
                 </div>
 
                 <div>
