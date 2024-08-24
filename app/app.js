@@ -64,18 +64,19 @@ function desencriptar(){
 
 
 function copiar() {
-    // Get the text field
-    let textoCopiado = document.getElementById(".contenido__principal__resultado__info");
+ 
+    // se obtiene el valor del elemento con esta clase, un parrafo en este caso
+    let textoCopiado = document.querySelector(".contenido__principal__resultado__info").textContent;
   
-    // Select the text field
-    textoCopiado.select();
-    textoCopiado.setSelectionRange(0, 99999); // For mobile devices
-  
-    // Copy the text inside the text field
-    navigator.clipboard.writeText(textoCopiado.value);
-    
-    // Alert the copied text
-    alert("Copied the text: " + textoCopiado.value);
+    let temporal = document.createElement("textarea"); // contenedor temporal que no se vera
+    temporal.value = textoCopiado; // se asigna como valor del contenedor el texto copiado
+    document.body.appendChild(temporal); // se agrega al body del documento para que sea seleccionado y copiado mas adelante
+
+    temporal.select(); // selecciona el valor del contenedor temporal
+    navigator.clipboard.writeText(temporal.value); // se copia ese valor al portapapeles
+    document.body.removeChild(temporal); // eliminar el elemento temporal
+
+    alert("Texto copiado: " + textoCopiado);
   }
 
 
