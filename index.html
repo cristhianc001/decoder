@@ -10,12 +10,16 @@
 <body>
     
     <header class="header">
-        <img class="header__imagen" src="./assets/decode.png">
         <img class="header__imagen" src="./assets/alura.svg">
     </header>
     <div class="informacion">   
-        <h1>  </h1>
-        <p>  </p>
+        <h1> Encriptador </h1>
+        <ul>
+            <li> Usa <strong class="destacado">  Encriptar </strong> ManzanaManzanaManzanaManzanaManzanaManzanaManzanaManzanaManzanaManzana</li>
+            <li> Usa <strong class="destacado">  Desencriptar </strong></li>
+            <li> Usa<strong class="destacado">  Adecuar </strong></li>
+
+        </ul>
     </div>
 
     <main class="contenido">
@@ -25,9 +29,13 @@
             <div> 
             
                 <textarea type="text" class="contenido__principal__input" id="textoUsuario" placeholder="Escriba el texto aqui"></textarea>
-                <p class="contenido__principal__condicion">● Solo letras minúsculas y sin acentos</p>
-                <button onclick="encriptar();">Encriptar</button> 
-                <button onclick="desencriptar();">Desencriptar</button>
+                <p class="contenido__principal__condicion"> ● Solo letras minúsculas y sin acentos</p>
+                
+                <div class="contenido__principal__botones">   
+                    <button class="botones" onclick="encriptar();">Encriptar</button> 
+                    <button class="botones"onclick="desencriptar();">Desencriptar</button>
+                    <button class="botones" onclick="desencriptar();">Adecuar</button>
+                </div>
                 
             </div>
 
@@ -38,8 +46,8 @@
                     <p class="contenido__principal__resultado__info">Ingresa el texto que desees encriptar o desencriptar.</p>
                 </div>
 
-                <div>
-                    <button onclick="copiar();">Copiar</button>
+                <div class="contenido__principal__resultado__boton">
+                    <button class="botones" onclick="copiar();">Copiar</button>
                 </div>
             </div>
 

@@ -14,28 +14,33 @@ function asignarImagenElemento(elemento, ruta){
 }
 
 function condicionesIniciales(){
-    asignarTextoElemento (".contenido__principal__resultado__titulo", "Prueba parrafo3");
-    asignarTextoElemento (".contenido__principal__resultado__info", "Prueba parrafo4");
-    asignarTextoElemento (".contenido__principal__condicion", "Prueba parrafo5");
-    asignarImagenElemento (".contenido__principal__resultado__imagen", "assets/x.png");
-    
+    asignarTextoElemento (".contenido__principal__resultado__titulo", "Ningún mensaje fue encontrado");
+    asignarTextoElemento (".contenido__principal__resultado__info", "Ingresa el texto que desees encriptar o desencriptar.");
+    asignarImagenElemento (".contenido__principal__resultado__imagen", "./assets/decode.png");
+
+    let imagen = document.querySelector(".contenido__principal__resultado__imagen"); // cuando use Encriptar en el textarea vacia
+    imagen.style.width = "40%"; 
+    imagen.style.height = "40%";   
 }
 
-function encriptar(){
-     
+function encriptar(){    
     let textoUsuario = document.getElementById('textoUsuario').value;
-    let encriptado = btoa(textoUsuario)
-    
-    
 
+    if (textoUsuario == ""){
+        condicionesIniciales();
+    }     
+    else {
 
-    asignarTextoElemento (".contenido__principal__resultado__titulo", "");
-    asignarTextoElemento (".contenido__principal__resultado__info", encriptado);
-    
-    let imagen = document.querySelector(".contenido__principal__resultado__imagen"); 
-    imagen.style.width = "1px";   
-    imagen.style.height = "1px";  
+        let encriptado = btoa(textoUsuario)
+        
 
+        asignarTextoElemento (".contenido__principal__resultado__titulo", "");
+        asignarTextoElemento (".contenido__principal__resultado__info", encriptado);
+        
+        let imagen = document.querySelector(".contenido__principal__resultado__imagen"); 
+        imagen.style.width = 0;   
+        imagen.style.height = 0;  
+    }
     return;
     
 
@@ -45,18 +50,22 @@ function encriptar(){
 function desencriptar(){
      
     let textoUsuario = document.getElementById('textoUsuario').value;
-    let desencriptado = atob(textoUsuario)
-    
-    
 
+    if (textoUsuario == ""){
+        condicionesIniciales();
+    }     
+    else {
 
-    asignarTextoElemento (".contenido__principal__resultado__titulo", "");
-    asignarTextoElemento (".contenido__principal__resultado__info", desencriptado);
-    
-    let imagen = document.querySelector(".contenido__principal__resultado__imagen"); 
-    imagen.style.width = "1px";   
-    imagen.style.height = "1px";  
+        let desencriptado = atob(textoUsuario)
+        
 
+        asignarTextoElemento (".contenido__principal__resultado__titulo", "");
+        asignarTextoElemento (".contenido__principal__resultado__info", desencriptado);
+        
+        let imagen = document.querySelector(".contenido__principal__resultado__imagen"); 
+        imagen.style.width = 0;   
+        imagen.style.height = 0;  
+    }
     return;
     
 
