@@ -35,7 +35,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    
+    padding-bottom: 4rem
 }
 
 
@@ -141,7 +141,7 @@ body {
         flex-direction: column;
         gap: 2rem;
         align-items: center;
-        
+        padding-bottom: 1rem
     }
 
     .contenido__principal__input {
