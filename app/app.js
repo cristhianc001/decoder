@@ -38,7 +38,12 @@ function encriptar(){
         }
         
         else{
-            let encriptado = btoa(textoUsuario)
+            let encriptado = textoUsuario
+            .replace(/e/g, "enter")
+            .replace(/i/g, "imes")
+            .replace(/a/g, "ai")
+            .replace(/o/g, "ober")
+            .replace(/u/g, "ufat");
     
             asignarTextoElemento (".contenido__resultado__titulo", "");
             asignarTextoElemento (".contenido__resultado__info", "");
@@ -73,7 +78,12 @@ function desencriptar(){
         }
         
         else {
-            let desencriptado = atob(textoUsuario)
+            let desencriptado = textoUsuario
+            .replace(/enter/g, "e")
+            .replace(/imes/g, "i")
+            .replace(/ai/g, "a")
+            .replace(/ober/g, "o")
+            .replace(/ufat/g, "u");
         
             asignarTextoElemento (".contenido__resultado__titulo", "");
             asignarTextoElemento (".contenido__resultado__info", "");
@@ -105,7 +115,7 @@ function procesar(){
 
         asignarTextoElemento (".contenido__resultado__final", ""); 
         asignarTextoElemento (".contenido__resultado__titulo", "El texto ha sido procesado");
-        asignarTextoElemento (".contenido__resultado__info", "Continue con la encriptacion");
+        asignarTextoElemento (".contenido__resultado__info", "Continue con la transformacion");
 
     }
     return;
