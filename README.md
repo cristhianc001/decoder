@@ -7,6 +7,8 @@ Encriptador de texto que usa el siguiente criterio para transformar palabras:
     La letra "o" es convertida para "ober"
     La letra "u" es convertida para "ufat"
 
+Ademas tiene la condicion de no aceptar mayusculas, acentos y caracteres especiales.
+
 # Versiones
 
 ## PC
