@@ -17,7 +17,7 @@ function condicionesIniciales(){
     asignarImagenElemento (".contenido__resultado__imagen", "./assets/decode.png");
 
     let imagen = document.querySelector(".contenido__resultado__imagen"); // cuando use Encriptar en el textarea vacia
-    imagen.style.width = "30%"; 
+    imagen.style.width = "20%"; 
     imagen.style.height = "30%";   
 }
 
