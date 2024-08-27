@@ -52,29 +52,39 @@ function encriptar(){
 
     }
     return;
-    
 
 }
 
 
 function desencriptar(){
-     
     let textoUsuario = document.getElementById('textoUsuario').value;
 
     if (textoUsuario == ""){
         condicionesIniciales();
     }     
     else {
+        // booleanos
+        const tieneMayusculas = /[A-Z]/.test(textoUsuario);
+        const tieneAcentos = /[áéíóúüñ]/.test(textoUsuario);
+        const tieneCaracteresEspeciales = /[^a-zA-Z0-9\s]/.test(textoUsuario);
 
-        let desencriptado = atob(textoUsuario)
+        if (tieneMayusculas || tieneAcentos || tieneCaracteresEspeciales){
+            alert("El texto contiene mayúsculas, acentos o caracteres especiales. Use el boton Procesar.");
+        }
         
-        asignarTextoElemento (".contenido__resultado__titulo", "");
-        asignarTextoElemento (".contenido__resultado__info", "");
-        asignarTextoElemento (".contenido__resultado__final", desencriptado);
+        else {
+            let desencriptado = atob(textoUsuario)
         
-        let imagen = document.querySelector(".contenido__resultado__imagen"); 
-        imagen.style.width = 0;   
-        imagen.style.height = 0;  
+            asignarTextoElemento (".contenido__resultado__titulo", "");
+            asignarTextoElemento (".contenido__resultado__info", "");
+            asignarTextoElemento (".contenido__resultado__final", desencriptado);
+            
+            let imagen = document.querySelector(".contenido__resultado__imagen"); 
+            imagen.style.width = 0;   
+            imagen.style.height = 0;  
+        }
+        
+   
     }
     return;
 }

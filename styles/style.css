@@ -34,7 +34,7 @@ body {
 .contenido{
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 10rem;
     padding-bottom: 4rem
 }
 
