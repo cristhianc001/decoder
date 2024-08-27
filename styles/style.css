@@ -89,8 +89,8 @@ body {
 
 .contenido__resultado {
     
-    max-width: 60%;
-    min-width: 60%;
+    max-width: 20rem;
+    min-width: 20rem;
     max-height: 19rem;
     min-height: 19rem;
 
