@@ -11,12 +11,12 @@ function asignarImagenElemento(elemento, ruta){
 }
 
 function condicionesIniciales(){
-    asignarTextoElemento (".contenido__principal__resultado__final", "");
-    asignarTextoElemento (".contenido__principal__resultado__titulo", "Ningún mensaje fue encontrado");
-    asignarTextoElemento (".contenido__principal__resultado__info", "Ingresa el texto que desees encriptar o desencriptar.");
-    asignarImagenElemento (".contenido__principal__resultado__imagen", "./assets/decode.png");
+    asignarTextoElemento (".contenido__resultado__final", "");
+    asignarTextoElemento (".contenido__resultado__titulo", "Ningún mensaje fue encontrado");
+    asignarTextoElemento (".contenido__resultado__info", "Ingresa el texto que desees encriptar o desencriptar.");
+    asignarImagenElemento (".contenido__resultado__imagen", "./assets/decode.png");
 
-    let imagen = document.querySelector(".contenido__principal__resultado__imagen"); // cuando use Encriptar en el textarea vacia
+    let imagen = document.querySelector(".contenido__resultado__imagen"); // cuando use Encriptar en el textarea vacia
     imagen.style.width = "30%"; 
     imagen.style.height = "30%";   
 }
@@ -32,11 +32,11 @@ function encriptar(){
         let encriptado = btoa(textoUsuario)
         
 
-        asignarTextoElemento (".contenido__principal__resultado__titulo", "");
-        asignarTextoElemento (".contenido__principal__resultado__info", "");
-        asignarTextoElemento (".contenido__principal__resultado__final", encriptado);
+        asignarTextoElemento (".contenido__resultado__titulo", "");
+        asignarTextoElemento (".contenido__resultado__info", "");
+        asignarTextoElemento (".contenido__resultado__final", encriptado);
         
-        let imagen = document.querySelector(".contenido__principal__resultado__imagen"); 
+        let imagen = document.querySelector(".contenido__resultado__imagen"); 
         imagen.style.width = 0;   
         imagen.style.height = 0;  
     }
@@ -57,11 +57,11 @@ function desencriptar(){
 
         let desencriptado = atob(textoUsuario)
         
-        asignarTextoElemento (".contenido__principal__resultado__titulo", "");
-        asignarTextoElemento (".contenido__principal__resultado__info", "");
-        asignarTextoElemento (".contenido__principal__resultado__final", desencriptado);
+        asignarTextoElemento (".contenido__resultado__titulo", "");
+        asignarTextoElemento (".contenido__resultado__info", "");
+        asignarTextoElemento (".contenido__resultado__final", desencriptado);
         
-        let imagen = document.querySelector(".contenido__principal__resultado__imagen"); 
+        let imagen = document.querySelector(".contenido__resultado__imagen"); 
         imagen.style.width = 0;   
         imagen.style.height = 0;  
     }
@@ -81,9 +81,9 @@ function procesar(){
         let textoSinAcentos = textoMinusculas.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
         document.getElementById('textoUsuario').value = textoSinAcentos;
 
-        asignarTextoElemento (".contenido__principal__resultado__final", ""); 
-        asignarTextoElemento (".contenido__principal__resultado__titulo", "El texto ha sido procesado");
-        asignarTextoElemento (".contenido__principal__resultado__info", "Continue con la encriptacion");
+        asignarTextoElemento (".contenido__resultado__final", ""); 
+        asignarTextoElemento (".contenido__resultado__titulo", "El texto ha sido procesado");
+        asignarTextoElemento (".contenido__resultado__info", "Continue con la encriptacion");
 
     }
     return;
@@ -93,7 +93,7 @@ function procesar(){
 function copiar() {
  
     // se obtiene el valor del elemento con esta clase, un parrafo en este caso
-    let textoCopiado = document.querySelector(".contenido__principal__resultado__final").textContent;
+    let textoCopiado = document.querySelector(".contenido__resultado__final").textContent;
   
     if (textoCopiado == "") {
         alert("No hay texto disponible");
