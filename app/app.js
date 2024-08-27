@@ -28,17 +28,28 @@ function encriptar(){
         condicionesIniciales();
     }     
     else {
-
-        let encriptado = btoa(textoUsuario)
+        // booleanos
+        const tieneMayusculas = /[A-Z]/.test(textoUsuario);
+        const tieneAcentos = /[áéíóúüñ]/.test(textoUsuario);
+        const tieneCaracteresEspeciales = /[^a-zA-Z0-9\s]/.test(textoUsuario);
+        
+        if (tieneMayusculas || tieneAcentos || tieneCaracteresEspeciales){
+            alert("El texto contiene mayúsculas, acentos o caracteres especiales. Use el boton Procesar.");
+        }
+        
+        else{
+            let encriptado = btoa(textoUsuario)
+    
+            asignarTextoElemento (".contenido__resultado__titulo", "");
+            asignarTextoElemento (".contenido__resultado__info", "");
+            asignarTextoElemento (".contenido__resultado__final", encriptado);
+            
+            let imagen = document.querySelector(".contenido__resultado__imagen"); 
+            imagen.style.width = 0;   
+            imagen.style.height = 0;     
+        }
         
 
-        asignarTextoElemento (".contenido__resultado__titulo", "");
-        asignarTextoElemento (".contenido__resultado__info", "");
-        asignarTextoElemento (".contenido__resultado__final", encriptado);
-        
-        let imagen = document.querySelector(".contenido__resultado__imagen"); 
-        imagen.style.width = 0;   
-        imagen.style.height = 0;  
     }
     return;
     
@@ -79,7 +90,8 @@ function procesar(){
 
         let textoMinusculas = textoUsuario.toLowerCase();
         let textoSinAcentos = textoMinusculas.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-        document.getElementById('textoUsuario').value = textoSinAcentos;
+        let textoSinCaracteresEspeciales = textoSinAcentos.replace(/[^a-zA-Z0-9\s]/g, "");
+        document.getElementById('textoUsuario').value = textoSinCaracteresEspeciales;
 
         asignarTextoElemento (".contenido__resultado__final", ""); 
         asignarTextoElemento (".contenido__resultado__titulo", "El texto ha sido procesado");
